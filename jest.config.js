@@ -3,5 +3,6 @@ module.exports = {
   testEnvironment: 'node',
   globals: {
     "Logger": {},
+    "DocumentApp": {}
   }
 };

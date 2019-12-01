@@ -1,5 +1,4 @@
 const greeter = (person: string): string => {
-  console.log(person);
   return `Hello, ${person}!`;
 };
 
