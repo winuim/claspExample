@@ -35,7 +35,8 @@ const age = 42;
 console.log(`hello my name is ${name}, and I am ${age} years old`);
 
 // Rest arguments
-const buildName = (first: string, ...rest) => first + " " + rest.join(" ");
+const buildName = (first: string, ...rest): string =>
+  first + " " + rest.join(" ");
 buildName("First", "Second", "Third");
 
 // Spread operator (array)
@@ -49,7 +50,7 @@ const mapABCD = { ...mapABC, d: 7 }; // { a: 5, b: 6, c: 3, d: 7 }
 // Destructure map
 const jane = { firstName: "Jane", lastName: "Doe" };
 const john = { firstName: "John", lastName: "Doe", middleName: "Smith" };
-function sayName({ firstName, lastName, middleName = "N/A" }) {
+function sayName({ firstName, lastName, middleName = "N/A" }): void {
   console.log(`Hello ${firstName} ${middleName} ${lastName}`);
 }
 sayName(jane); // -> Hello Jane N/A Doe
@@ -59,14 +60,17 @@ sayName(john); // -> Hello John Smith Doe
 export const pi = 3.141592;
 
 // Google Apps Script Services
-// const doc = DocumentApp.create("Hello, world!");
-// doc
-//   .getBody()
-//   .appendParagraph("This document was created by Google Apps Script.");
+function createDocument(): string {
+  const doc = DocumentApp.create("Hello, world!");
+  doc
+    .getBody()
+    .appendParagraph("This document was created by Google Apps Script.");
+  return doc.getId();
+}
 
 // Decorators
 function Override(label: string) {
-  return function(target: any, key: string) {
+  return function(target: any, key: string): void {
     Object.defineProperty(target, key, {
       configurable: false,
       get: () => label,
@@ -99,5 +103,6 @@ export {
   jane,
   john,
   sayName,
-  Test
+  Test,
+  createDocument
 };

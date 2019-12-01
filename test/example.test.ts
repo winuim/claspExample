@@ -15,8 +15,28 @@ import {
   john,
   sayName,
   pi,
-  Test
+  Test,
+  createDocument
 } from "../src/example";
+
+class BodyMock {
+  _Paragraph: string;
+  appendParagraph(text: string): void {
+    this._Paragraph = text;
+  }
+}
+class DocumentMock {
+  _name: string;
+  constructor(name) {
+    this._name = name;
+  }
+  getBody(): BodyMock {
+    return new BodyMock();
+  }
+  getId(): string {
+    return "0123456789";
+  }
+}
 
 describe("example.ts test", () => {
   test("variable", () => {
@@ -87,5 +107,24 @@ describe("example.ts test", () => {
   test("Test Class", () => {
     const t = new Test();
     expect(t.name).toBe("test");
+  });
+  test("createDocument", () => {
+    // DocumentApp.create = jest.fn().mockImplementation(name => {
+    //   return {
+    //     getBody: jest.fn().mockImplementation(() => {
+    //       return {
+    //         appendParagraph: jest.fn().mockImplementation(text => {
+    //           this._text = text;
+    //         })
+    //       };
+    //     }),
+    //     getId: jest.fn().mockReturnValue("0123456789")
+    //   };
+    // });
+    DocumentApp.create = jest.fn().mockImplementation(name => {
+      return new DocumentMock(name);
+    });
+    const expected = createDocument();
+    expect(expected).toBe("0123456789");
   });
 });
