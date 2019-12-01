@@ -1,8 +1,12 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "esnext"
-        ],
-        "experimentalDecorators": true
-    }
+  "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
+    "experimentalDecorators": true
+  },
+  "include": [
+      "src/**/*",
+      "test/**/*"
+  ]
 }
