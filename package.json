@@ -5,9 +5,8 @@
   "main": "hello.js",
   "scripts": {
     "ts-node": "npx ts-node",
-    "test": "npx jest --silent=true",
-    "test-only": "npx jest --silent=true -o",
-    "test-coverage": "npx jest --silent=true --coverage"
+    "test": "npx jest --silent=true --coverage",
+    "test-only": "npx jest --silent=true -o"
   },
   "repository": {
     "type": "git",
