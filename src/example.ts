@@ -84,8 +84,8 @@ class Test {
   @Override("test") // invokes Override, which returns the decorator
   name = "pat";
 }
-// const t = new Test();
-// console.log(t.name); // 'test'
+const t = new Test();
+console.log(t.name); // 'test'
 
 export {
   isDone,
