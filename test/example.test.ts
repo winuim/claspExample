@@ -18,23 +18,34 @@ import {
   Test,
   createDocument
 } from "../src/example";
+import fs = require("fs");
 
 class BodyMock {
-  _Paragraph: string;
+  private _doc: DocumentMock;
+  constructor(doc: DocumentMock) {
+    this._doc = doc;
+  }
   appendParagraph(text: string): void {
-    this._Paragraph = text;
+    fs.appendFile(this._doc.getName(), text, err => {
+      if (err) {
+        throw err;
+      }
+    });
   }
 }
 class DocumentMock {
-  _name: string;
-  constructor(name) {
+  private _name: string;
+  constructor(name: string) {
     this._name = name;
   }
   getBody(): BodyMock {
-    return new BodyMock();
+    return new BodyMock(this);
   }
   getId(): string {
     return "0123456789";
+  }
+  getName(): string {
+    return this._name;
   }
 }
 
