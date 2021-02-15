@@ -7,7 +7,7 @@ const list2: Array<number> = [1, 2, 3];
 enum Color {
   Red,
   Green,
-  Blue
+  Blue,
 }
 const c: Color = Color.Green;
 let notSure: any = 4;
@@ -70,13 +70,13 @@ function createDocument(): string {
 
 // Decorators
 function Override(label: string) {
-  return function(target: any, key: string): void {
+  return function (target: any, key: string): void {
     Object.defineProperty(target, key, {
       configurable: false,
       get: () => label,
-      set: target => {
+      set: (target) => {
         key = target;
-      }
+      },
     });
   };
 }
@@ -104,5 +104,5 @@ export {
   john,
   sayName,
   Test,
-  createDocument
+  createDocument,
 };

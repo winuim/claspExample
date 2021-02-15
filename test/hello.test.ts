@@ -2,7 +2,7 @@ import { greeter, testGreeter } from "../src/hello";
 
 describe("test.ts test", () => {
   beforeAll(() => {
-    Logger.log = jest.fn().mockImplementation(msg => {
+    Logger.log = jest.fn().mockImplementation((msg) => {
       return console.log(msg);
     });
     jest.spyOn(Logger, "log");

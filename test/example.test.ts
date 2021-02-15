@@ -16,7 +16,7 @@ import {
   sayName,
   pi,
   Test,
-  createDocument
+  createDocument,
 } from "../src/example";
 import fs = require("fs");
 
@@ -26,7 +26,7 @@ class BodyMock {
     this._doc = doc;
   }
   appendParagraph(text: string): void {
-    fs.appendFile(this._doc.getName(), text, err => {
+    fs.appendFile(this._doc.getName(), text, (err) => {
       if (err) {
         throw err;
       }
@@ -132,7 +132,7 @@ describe("example.ts test", () => {
     //     getId: jest.fn().mockReturnValue("0123456789")
     //   };
     // });
-    DocumentApp.create = jest.fn().mockImplementation(name => {
+    DocumentApp.create = jest.fn().mockImplementation((name) => {
       return new DocumentMock(name);
     });
     const expected = createDocument();

@@ -1,8 +1,8 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  preset: "ts-jest",
+  testEnvironment: "node",
   globals: {
-    "Logger": {},
-    "DocumentApp": {}
-  }
+    Logger: {},
+    DocumentApp: {},
+  },
 };
