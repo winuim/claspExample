@@ -1,7 +1,7 @@
 // Optional Types
 const isDone = false;
 const height = 6;
-const bob = "bob";
+const bob = 'bob';
 const list1: number[] = [1, 2, 3];
 const list2: Array<number> = [1, 2, 3];
 enum Color {
@@ -11,13 +11,13 @@ enum Color {
 }
 const c: Color = Color.Green;
 let notSure: any = 4;
-notSure = "maybe a string instead";
+notSure = 'maybe a string instead';
 notSure = false; // okay, definitely a boolean
 function showMessage(data: string): void {
   // Void
   console.log(data);
 }
-showMessage("hello");
+showMessage('hello');
 
 // Classes
 class Hamburger {
@@ -30,27 +30,27 @@ class Hamburger {
 }
 
 // Template strings
-const name = "Sam";
+const name = 'Sam';
 const age = 42;
 console.log(`hello my name is ${name}, and I am ${age} years old`);
 
 // Rest arguments
 const buildName = (first: string, ...rest): string =>
-  first + " " + rest.join(" ");
-buildName("First", "Second", "Third");
+  first + ' ' + rest.join(' ');
+buildName('First', 'Second', 'Third');
 
 // Spread operator (array)
-const cde = ["c", "d", "e"];
-const scale = ["a", "b", ...cde, "f", "g"]; // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+const cde = ['c', 'd', 'e'];
+const scale = ['a', 'b', ...cde, 'f', 'g']; // ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
 // Spread operator (map)
-const mapABC = { a: 5, b: 6, c: 3 };
-const mapABCD = { ...mapABC, d: 7 }; // { a: 5, b: 6, c: 3, d: 7 }
+const mapABC = {a: 5, b: 6, c: 3};
+const mapABCD = {...mapABC, d: 7}; // { a: 5, b: 6, c: 3, d: 7 }
 
 // Destructure map
-const jane = { firstName: "Jane", lastName: "Doe" };
-const john = { firstName: "John", lastName: "Doe", middleName: "Smith" };
-function sayName({ firstName, lastName, middleName = "N/A" }): void {
+const jane = {firstName: 'Jane', lastName: 'Doe'};
+const john = {firstName: 'John', lastName: 'Doe', middleName: 'Smith'};
+function sayName({firstName, lastName, middleName = 'N/A'}): void {
   console.log(`Hello ${firstName} ${middleName} ${lastName}`);
 }
 sayName(jane); // -> Hello Jane N/A Doe
@@ -61,10 +61,10 @@ export const pi = 3.141592;
 
 // Google Apps Script Services
 function createDocument(): string {
-  const doc = DocumentApp.create("Hello, world!");
+  const doc = DocumentApp.create('Hello, world!');
   doc
     .getBody()
-    .appendParagraph("This document was created by Google Apps Script.");
+    .appendParagraph('This document was created by Google Apps Script.');
   return doc.getId();
 }
 
@@ -74,15 +74,15 @@ function Override(label: string) {
     Object.defineProperty(target, key, {
       configurable: false,
       get: () => label,
-      set: (target) => {
+      set: target => {
         key = target;
       },
     });
   };
 }
 class Test {
-  @Override("test") // invokes Override, which returns the decorator
-  name = "pat";
+  @Override('test') // invokes Override, which returns the decorator
+  name = 'pat';
 }
 const t = new Test();
 console.log(t.name); // 'test'

@@ -4,23 +4,26 @@
   "description": "",
   "main": "hello.js",
   "scripts": {
-    "ts-node": "npx ts-node",
-    "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write .",
-    "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "npx jest --silent=true --coverage",
-    "test-only": "npx jest --silent=true -o"
+    "test-only": "npx jest --silent=true -o",
+    "lint": "gts lint",
+    "clean": "gts clean && rm -rf coverage",
+    "compile": "tsc --pretty --noEmit",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn type-check"
+      "pre-push": "npm run compile"
     }
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
+      "npm run lint",
+      "npm run fix"
     ]
   },
   "repository": {
@@ -34,15 +37,16 @@
   },
   "homepage": "https://github.com/winuim/claspExample#readme",
   "dependencies": {
-    "@types/google-apps-script": "^1.0.24"
+    "@types/google-apps-script": "^1.0.25"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.28",
+    "@types/node": "^14.14.31",
     "@types/underscore": "^1.10.24",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
+    "gts": "^3.1.0",
     "husky": "^5.0.9",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",

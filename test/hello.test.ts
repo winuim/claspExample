@@ -1,20 +1,20 @@
-import { greeter, testGreeter } from "../src/hello";
+import {greeter, testGreeter} from '../src/hello';
 
-describe("test.ts test", () => {
+describe('test.ts test', () => {
   beforeAll(() => {
-    Logger.log = jest.fn().mockImplementation((msg) => {
+    Logger.log = jest.fn().mockImplementation(msg => {
       return console.log(msg);
     });
-    jest.spyOn(Logger, "log");
+    jest.spyOn(Logger, 'log');
   });
-  test("greeter", () => {
-    const person = "World";
+  test('greeter', () => {
+    const person = 'World';
     const expected = greeter(person);
-    expect(expected).toBe("Hello, World!");
+    expect(expected).toBe('Hello, World!');
   });
-  test("testGreeter", () => {
+  test('testGreeter', () => {
     const expected = testGreeter();
     expect(Logger.log).toBeCalled();
-    expect(expected).toBe("Hello, Grant!");
+    expect(expected).toBe('Hello, Grant!');
   });
 });

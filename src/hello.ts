@@ -3,10 +3,10 @@ const greeter = (person: string): string => {
 };
 
 function testGreeter(): string {
-  const user = "Grant";
+  const user = 'Grant';
   const msg = greeter(user);
   Logger.log(msg);
   return msg;
 }
 
-export { greeter, testGreeter };
+export {greeter, testGreeter};
