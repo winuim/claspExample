@@ -1,11 +1,10 @@
 {
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
-    "skipLibCheck": true,
-    "strict": false,
+    "lib": ["esnext"],
     "experimentalDecorators": true,
     "rootDir": ".",
     "outDir": "build"
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }

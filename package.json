@@ -20,7 +20,8 @@
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "npm test",
+      "npm run lint",
+      "jest --bail --findRelatedTests",
       "npm run fix"
     ]
   },

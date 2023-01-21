@@ -18,7 +18,7 @@ import {
   Test,
   createDocument,
 } from '../example';
-import fs = require('fs');
+import * as fs from 'fs';
 
 class BodyMock {
   private _doc: DocumentMock;
