@@ -17,8 +17,8 @@ import {
   pi,
   Test,
   createDocument,
-} from '../src/example';
-import fs = require('fs');
+} from '../example';
+import * as fs from 'fs';
 
 class BodyMock {
   private _doc: DocumentMock;

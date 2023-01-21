@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Optional Types
 const isDone = false;
 const height = 6;
@@ -35,7 +37,7 @@ const age = 42;
 console.log(`hello my name is ${name}, and I am ${age} years old`);
 
 // Rest arguments
-const buildName = (first: string, ...rest): string =>
+const buildName = (first: string, ...rest: string[]): string =>
   first + ' ' + rest.join(' ');
 buildName('First', 'Second', 'Third');
 
@@ -50,7 +52,7 @@ const mapABCD = {...mapABC, d: 7}; // { a: 5, b: 6, c: 3, d: 7 }
 // Destructure map
 const jane = {firstName: 'Jane', lastName: 'Doe'};
 const john = {firstName: 'John', lastName: 'Doe', middleName: 'Smith'};
-function sayName({firstName, lastName, middleName = 'N/A'}): void {
+function sayName({firstName = '', lastName = '', middleName = 'N/A'}): void {
   console.log(`Hello ${firstName} ${middleName} ${lastName}`);
 }
 sayName(jane); // -> Hello Jane N/A Doe
