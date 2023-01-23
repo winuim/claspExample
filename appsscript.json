@@ -13,33 +13,18 @@
         "userSymbol": "Drive",
         "serviceId": "drive",
         "version": "v2"
+      },
+      {
+        "userSymbol": "Sheets",
+        "version": "v4",
+        "serviceId": "sheets"
       }
     ],
     "libraries": [
       {
-        "userSymbol": "LodashGS",
-        "version": "6",
-        "libraryId": "1SQ0PlSMwndIuOAgtVJdjxsuXueECtY9OGejVDS37ckSVbMll73EXf2PW"
-      },
-      {
-        "userSymbol": "Cheerio",
-        "version": "14",
-        "libraryId": "1ReeQ6WO8kKNxoaA_O0XEQ589cIrRvEBA9qcWpNqdOP17i47u6N9M5Xh0"
-      },
-      {
-        "userSymbol": "dayjs",
-        "version": "1",
-        "libraryId": "1ShsRhHc8tgPy5wGOzUvgEhOedJUQD53m-gd8lG2MOgs-dXC_aCZn9lFB"
-      },
-      {
-        "userSymbol": "BetterLog",
-        "version": "27",
-        "libraryId": "1DSyxam1ceq72bMHsE6aOVeOl94X78WCwiYPytKi7chlg4x5GqiNXSw0l"
-      },
-      {
-        "userSymbol": "SpreadSheetsSQL",
-        "version": "11",
-        "libraryId": "17p1ghyOkbWOhdE4bdBFhOXL079I-yt5xd0LAi00Zs5N-bUzpQtN7iT1a"
+        "userSymbol": "OAuth2",
+        "version": "43",
+        "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF"
       }
     ]
   }
