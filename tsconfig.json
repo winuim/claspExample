@@ -3,6 +3,8 @@
   "compilerOptions": {
     "lib": ["esnext"],
     "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "rootDir": ".",
     "outDir": "build"
   },

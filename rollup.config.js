@@ -1,5 +1,6 @@
 import {babel} from '@rollup/plugin-babel';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import copy from 'rollup-plugin-copy';
 
 const extensions = ['.ts', '.js'];
@@ -30,6 +31,7 @@ export default {
       mainFields: ['jsnext:main', 'module', 'main'],
     }),
     babel({extensions, babelHelpers: 'runtime'}),
+    commonjs(),
     copy({
       targets: [
         {src: 'appsscript.json', dest: 'dist/'},
