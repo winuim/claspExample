@@ -37,8 +37,7 @@
   "homepage": "https://github.com/winuim/claspExample#readme",
   "dependencies": {
     "@types/google-apps-script": "^1.0.57",
-    "@types/google-apps-script-oauth2": "^38.0.0",
-    "dayjs": "^1.11.7"
+    "@types/google-apps-script-oauth2": "^38.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
