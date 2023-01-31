@@ -1,8 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import dayjs from 'dayjs';
-import 'dayjs/locale/ja';
-
-dayjs.locale('ja');
 
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
@@ -16,8 +12,7 @@ function onOpen() {
     .addItem('Show prompt', 'showPrompt')
     .addItem('Show dialog', 'showDialog')
     .addItem('Show sidebar', 'showSidebar')
-    .addSeparator()
-    .addItem('Example dayjs', 'exampleDayjs')
+    .addItem('Open', 'openDialog')
     .addToUi();
 }
 
@@ -89,6 +84,11 @@ function showSidebar() {
     .showSidebar(html);
 }
 
-function exampleDayjs() {
-  SpreadsheetApp.getUi().alert(dayjs().format('YYYY年M月D日 H:m'));
+function openDialog() {
+  const html = HtmlService.createTemplateFromFile('Index').evaluate();
+  SpreadsheetApp.getUi().showModalDialog(html, 'Dialog title');
+}
+
+function getUnreadEmails() {
+  return GmailApp.getInboxUnreadCount();
 }
